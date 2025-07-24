@@ -108,8 +108,8 @@
 # else:
 #     print("Invalid operator")
 
-# leap year
-year = int(input("Enter year: "))
+# # leap year
+# year = int(input("Enter year: "))
 
 # if year % 4 == 0:
 #     if year % 100 == 0:
@@ -122,7 +122,7 @@ year = int(input("Enter year: "))
 # else:
 #     print(f"{year} is not a leap year.")
 
-if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
-    print("y")
-else:
-    print("n")
+# if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+#     print("Year is a leap year")
+# else:
+#     print("Year is not a leap year")
