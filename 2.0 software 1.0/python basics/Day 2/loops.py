@@ -100,11 +100,77 @@
 # if not is_raining:
 #     print("Let's go for a walk!")
 
-# BASICS
+# # BASICS
 
-names = ["Computer", "Shape", "Abt", "Singrl", "Sugoiu"]
+# names = ["Atsimbom", "Shambom", "Abt", "Simbomgrl", "Sugoiu"]
 
-i = 1
-for name in names:
-    print(f"{i}. {name}")
-    i += 1
+# FORLOOP
+# for name in names:
+#     if name.endswith("mbom"):
+#         print(f"{name} you are under arrest")
+#     else:
+#         print(f"{name}, carry on model citizen")
+
+# i = 1
+# for name in names:
+#     print(f"{i}. {name}")
+#     i += 1
+
+# range
+# for i in range(5):
+#     print(i)
+
+#range(start, stop)
+# for i in range(2,7):
+#     print(i)
+
+# range(start, stop, step)
+# for i in range(0,10,2):
+#     print(i)
+
+# Coutndown
+# for i in range(10,0,-1):
+#     print(f"Countdown: {i}")
+# print("Leshh gooo!😊")
+
+# WHILELOOP
+
+# Basic while loop
+# count = 1
+# while count <= 5:
+#     print(f"{count}. madness")
+#     count += 1
+
+# User input loop
+# user_input = ""
+
+# while user_input != "quit":
+#     user_input = input("Enter 'quit' to exit: ")
+#     print(f"You entered {user_input}")
+# print("Goodbye")
+
+# Break keyword - finding first even number
+# print("finding the first even number\n")
+# for number in range(1,10):
+#     if number % 2 == 0:
+#         print(f"First even number found: '{number}'")
+#         break
+#     print(f"'{number}' is odd")
+
+# continue keyword - finding all oddies
+# for number in range(1,10):
+#     if number % 2 == 0:
+#         continue
+#     print(f"Odd found: '{number}'")
+
+# Multiplication table
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"{i} x {j} = {i * j}")
+    # print()
+
+# Triangle pattern
+for row in range(1, 6):
+    for star in range(row):
+        print("*", end=" ")
+    print()
