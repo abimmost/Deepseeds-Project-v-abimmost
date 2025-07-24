@@ -99,3 +99,12 @@
 # is_raining = False
 # if not is_raining:
 #     print("Let's go for a walk!")
+
+# BASICS
+
+names = ["Computer", "Shape", "Abt", "Singrl", "Sugoiu"]
+
+i = 1
+for name in names:
+    print(f"{i}. {name}")
+    i += 1
