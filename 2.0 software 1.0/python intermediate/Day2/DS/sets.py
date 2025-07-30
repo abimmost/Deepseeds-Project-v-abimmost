@@ -1,4 +1,4 @@
-# Creating sets - like building unique collections
+## Creating sets - like building unique collections
 unique_numbers = {1, 2, 3, 4, 5}
 colors = {"red", "blue", "green", "yellow"}
 mixed_set = {1, "hello", 3.14, True}
@@ -11,7 +11,7 @@ print(f"Colors: {colors}")
 print(f"From list with duplicates: {unique_numbers_from_list}")
 print(f"Empty set: {empty_set}")
 
-# Set Operations
+## Set Operations
 python_students = {"Alice", "Bob", "Charlie", "Diana"}
 java_students = {"Bob", "Charlie", "Eve", "Frank"}
 javascript_students = {"Charlie", "Diana", "Eve", "Grace"}
@@ -28,7 +28,7 @@ print(f"Students taking Python but not Java: {python_only}")
 python_xor_java = python_students ^ java_students
 print(f"Students taking Python or Java but not both: {python_xor_java}")
 
-# Modifying Sets
+## Modifying Sets
 my_skills = {"Python", "JavaScript", "HTML"}
 print(f"Initial skills: {my_skills}")
 
@@ -50,7 +50,7 @@ removed_skill = my_skills.pop()
 print(f"Randomly removed skill: {removed_skill}")
 print(f"Remaining skills: {my_skills}")
 
-# Practical Set Examples
+## Practical Set Examples
 def manage_email_subscriptions():
     newsletter_subscribers = {"alice@email.com", "bob@email.com", "charlie@email.com"}
     promotion_subscribers = {"bob@email.com", "diana@email.com", "eve@email.com"}

@@ -1,4 +1,4 @@
-# Creating dictionaries - like building an address book
+## Creating dictionaries - like building an address book
 student_info = {
     "name": "Alice Johnson",
     "age": 20,
@@ -20,7 +20,7 @@ empty_dict = {}
 print(f"Student info: {student_info}")
 print(f"Phone book: {phone_book}")
 
-# Accessing Dictionary Values
+## Accessing Dictionary Values
 student = {
     "name": "Alice Johnson",
     "age": 20,
@@ -81,7 +81,7 @@ print(f"After removing phone: {student}")
 del student["email"]
 print(f"After removing email: {student}")
 
-# Dictionary Methods and Operations
+## Dictionary Methods and Operations
 inventory = {
     "apples": 50,
     "bananas": 30,
@@ -112,7 +112,7 @@ test_dict = {"a": 1, "b": 2}
 test_dict.clear()
 print(f"After clearing: {test_dict}")
 
-# Nested Dictionaries
+## Nested Dictionaries
 students_database = {
     "student_001": {
         "name": "Alice Johnson",
@@ -145,7 +145,7 @@ students_database["student_001"]["grades"]["Chemistry"] = 89
 
 print(f"Alice's updated info: {students_database['student_001']}")
 
-# Practical Dictionary Examples
+## Practical Dictionary Examples
 def count_words(text):
     words = text.lower().split()
     word_count = {}

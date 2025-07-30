@@ -1,4 +1,4 @@
-# Creating tuples - like sealing important information
+## Creating tuples - like sealing important information
 point_coordinates = (10, 20)
 rgb_color = (255, 128, 0)
 student_record = ("Alice", 20, "Computer Science", 3.8)
@@ -10,7 +10,7 @@ print(f"RGB color: {rgb_color}")
 print(f"Student record: {student_record}")
 print(f"Single item tuple: {single_item_tuple}")
 
-# Accessing Tuple Elements
+## Accessing Tuple Elements
 book_info = ("1984", "George Orwell", 1949, "Dystopian Fiction")
 
 title = book_info[0]
@@ -30,7 +30,7 @@ first_name, last_name, *other_info = ("John", "Smith", 30, "Engineer", "New York
 print(f"Name: {first_name} {last_name}")
 print(f"Other info: {other_info}")
 
-# Tuple Methods and Operations
+## Tuple Methods and Operations
 grades = (85, 90, 78, 90, 92, 85, 88)
 
 print(f"Number of grades: {len(grades)}")
@@ -44,7 +44,7 @@ print(f"Is 85 in grades? {85 in grades}")
 print(f"First three grades: {grades[:3]}")
 print(f"Last three grades: {grades[-3:]}")
 
-# Practical Tuple Examples
+## Practical Tuple Examples
 def get_distance_between_points(point1, point2):
     x1, y1 = point1
     x2, y2 = point2
