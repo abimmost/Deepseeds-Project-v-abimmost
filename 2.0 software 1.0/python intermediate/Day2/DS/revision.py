@@ -9,9 +9,12 @@ def array_calc(arrey, target):
         accumulator += num
     if target in arrey:
         status = "Seen"
+        returner = ["Seen"]
     else:
         status = "Unseen"
     avg = float(accumulator/len(arrey))
+    # returner.append(avg)
+    # return returner
     # return {"Status": status, "Average": avg} # Dictionaries
     return status, avg
 
@@ -23,3 +26,4 @@ target = int(input("Enter the number to find in the array: "))
 
 target_status, average = array_calc(arrey, target)
 
+print(f"{target} was {target_status}.\nAverage of the {len(arrey)} elements = {average:.2f}")
