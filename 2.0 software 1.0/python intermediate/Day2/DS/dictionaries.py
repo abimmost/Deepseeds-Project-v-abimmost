@@ -191,3 +191,98 @@ def show_cart():
         total_cost += details['total']
 
     print(f"Total: ${total_cost:.2f}")
+
+### Dictionary Exercises
+## Exercise 1: Personal Contact Manager
+
+contacts = {}
+
+def add_contact(name, phone, email):
+    """Add a contact to the directory."""
+    contacts[name] = {
+        "phone": phone,
+        "email": email
+    }
+    print(f"Added contact: {name}")
+
+def update_contact(name, phone=None, email=None):
+    """Update an existing contact."""
+    if name in contacts:
+        if phone:
+            contacts[name]["phone"] = phone
+        if email:
+            contacts[name]["email"] = email
+        print(f"Updated contact: {name}")
+    else:
+        print(f"Contact {name} not found")
+
+def show_all_contacts():
+    """Display all contacts."""
+    if not contacts:
+        print("No contacts in directory")
+        return
+
+    print("Contact Directory:")
+    for name, info in contacts.items():
+        print(f"Name: {name}")
+        print(f"  Phone: {info['phone']}")
+        print(f"  Email: {info['email']}")
+        print()
+
+# Test your functions
+add_contact("Alice", "555-1234", "alice@email.com")
+add_contact("Bob", "555-5678", "bob@email.com")
+show_all_contacts()
+update_contact("Alice", phone="555-9999")
+show_all_contacts()
+
+
+## Exercise 2: Grade Book System
+
+gradebook = {}
+
+def add_student(name):
+    """Add a new student to the gradebook."""
+    if name not in gradebook:
+        gradebook[name] = {}
+        print(f"Added student: {name}")
+    else:
+        print(f"Student {name} already exists")
+
+def add_grade(student_name, subject, grade):
+    """Add a grade for a student in a specific subject."""
+    if student_name in gradebook:
+        gradebook[student_name][subject] = grade
+        print(f"Added grade for {student_name} in {subject}: {grade}")
+    else:
+        print(f"Student {student_name} not found")
+
+def calculate_average(student_name):
+    """Calculate the average grade for a student."""
+    if student_name in gradebook and gradebook[student_name]:
+        grades = list(gradebook[student_name].values())
+        average = sum(grades) / len(grades)
+        return average
+    else:
+        return None
+
+def show_student_grades(student_name):
+    """Display all grades for a specific student."""
+    if student_name in gradebook:
+        print(f"Grades for {student_name}:")
+        for subject, grade in gradebook[student_name].items():
+            print(f"  {subject}: {grade}")
+
+        average = calculate_average(student_name)
+        if average:
+            print(f"  Average: {average:.1f}")
+    else:
+        print(f"Student {student_name} not found")
+
+# Test the gradebook system
+add_student("Alice")
+add_student("Bob")
+add_grade("Alice", "Math", 95)
+add_grade("Alice", "Science", 88)
+add_grade("Alice", "English", 92)
+show_student_grades("Alice")
