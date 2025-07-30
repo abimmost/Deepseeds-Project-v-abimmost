@@ -1,54 +1,56 @@
-## Creating dictionaries - like building an address book
-student_info = {
-    "name": "Alice Johnson",
-    "age": 20,
-    "major": "Computer Science",
-    "gpa": 3.8,
-    "is_graduate": False
-}
+# ## Creating dictionaries - like building an address book
+# student_info = {
+#     "name": "Alice Johnson",
+#     "age": 20,
+#     "major": "Computer Science",
+#     "gpa": 3.8,
+#     "is_graduate": False
+# }
 
-# Phone directory
-phone_book = {
-    "Alice": "555-1234",
-    "Bob": "555-5678",
-    "Charlie": "555-9012"
-}
+# # Phone directory
+# phone_book = {
+#     "Alice": "555-1234",
+#     "Bob": "555-5678",
+#     "Charlie": "555-9012"
+# }
 
-# Empty dictionary
-empty_dict = {}
+# # Empty dictionary
+# empty_dict = {}
 
-print(f"Student info: {student_info}")
-print(f"Phone book: {phone_book}")
+# print(f"Student info: {student_info}")
+# print(f"Phone book: {phone_book}")
 
 
 
-## Accessing Dictionary Values
-student = {
-    "name": "Alice Johnson",
-    "age": 20,
-    "major": "Computer Science",
-    "gpa": 3.8,
-    "courses": ["Python", "Calculus", "Physics"]
-}
+# ## Accessing Dictionary Values
+# student = {
+#     "name": "Alice Johnson",
+#     "age": 20,
+#     "major": "Computer Science",
+#     "gpa": 3.8,
+#     "courses": ["Python", "Calculus", "Physics"]
+# }
 
-# Accessing values by key
-print(f"Student name: {student['name']}")
-print(f"Age: {student['age']}")
-print(f"Major: {student['major']}")
+# # Accessing values by key
+# print(f"Student name: {student['name']}")
+# print(f"Age: {student['age']}")
+# print(f"Major: {student['major']}")
 
-# Safer way to access values (won't crash if key doesn't exist)
-print(f"GPA: {student.get('gpa', 'Not available')}")
-print(f"Graduation year: {student.get('grad_year', 'Not specified')}")
+# # Safer way to access values (won't crash if key doesn't exist)
+# print(f"GPA: {student.get('gpa', 'Not available')}")
+# print(f"Graduation year: {student.get('grad_year', 'Not specified')}")
 
-# Checking if a key exists
-if "courses" in student:
-    print(f"Current courses: {student['courses']}")
+# # Checking if a key exists
+# if "courses" in student:
+#     print(f"Current courses: {student['courses']}")
 
-# Getting all keys and values
-print(f"All keys: {list(student.keys())}")
-print(f"All values: {list(student.values())}")
+# # Getting all keys and values
+# print(f"All keys: {list(student.keys())}")
+# print(f"All values: {list(student.values())}")
 
-# Modifying Dictionaries
+
+
+## Modifying Dictionaries
 student = {
     "name": "Alice Johnson",
     "age": 20,
@@ -210,7 +212,7 @@ def show_cart():
 contacts = {}
 
 def add_contact(name, phone, email):
-    """Add a contact to the directory."""
+    """Add a contact to the directory.""" # docstring
     contacts[name] = {
         "phone": phone,
         "email": email
@@ -218,7 +220,7 @@ def add_contact(name, phone, email):
     print(f"Added contact: {name}")
 
 def update_contact(name, phone=None, email=None):
-    """Update an existing contact."""
+    """Update an existing contact.""" # docstring
     if name in contacts:
         if phone:
             contacts[name]["phone"] = phone
