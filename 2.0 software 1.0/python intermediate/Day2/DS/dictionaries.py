@@ -20,6 +20,8 @@ empty_dict = {}
 print(f"Student info: {student_info}")
 print(f"Phone book: {phone_book}")
 
+
+
 ## Accessing Dictionary Values
 student = {
     "name": "Alice Johnson",
@@ -55,6 +57,8 @@ student = {
 
 print(f"Original: {student}")
 
+
+
 # Adding new information
 student["gpa"] = 3.8
 student["graduation_year"] = 2025
@@ -80,6 +84,8 @@ print(f"After removing phone: {student}")
 # Remove a key-value pair (different method)
 del student["email"]
 print(f"After removing email: {student}")
+
+
 
 ## Dictionary Methods and Operations
 inventory = {
@@ -111,6 +117,8 @@ print(f"Backup created: {backup_inventory}")
 test_dict = {"a": 1, "b": 2}
 test_dict.clear()
 print(f"After clearing: {test_dict}")
+
+
 
 ## Nested Dictionaries
 students_database = {
@@ -144,6 +152,8 @@ students_database["student_001"]["email"] = "alice@university.edu"
 students_database["student_001"]["grades"]["Chemistry"] = 89
 
 print(f"Alice's updated info: {students_database['student_001']}")
+
+
 
 ## Practical Dictionary Examples
 def count_words(text):
@@ -191,6 +201,8 @@ def show_cart():
         total_cost += details['total']
 
     print(f"Total: ${total_cost:.2f}")
+
+
 
 ### Dictionary Exercises
 ## Exercise 1: Personal Contact Manager

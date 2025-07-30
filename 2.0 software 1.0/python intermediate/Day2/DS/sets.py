@@ -11,6 +11,8 @@ print(f"Colors: {colors}")
 print(f"From list with duplicates: {unique_numbers_from_list}")
 print(f"Empty set: {empty_set}")
 
+
+
 ## Set Operations
 python_students = {"Alice", "Bob", "Charlie", "Diana"}
 java_students = {"Bob", "Charlie", "Eve", "Frank"}
@@ -27,6 +29,8 @@ print(f"Students taking Python but not Java: {python_only}")
 
 python_xor_java = python_students ^ java_students
 print(f"Students taking Python or Java but not both: {python_xor_java}")
+
+
 
 ## Modifying Sets
 my_skills = {"Python", "JavaScript", "HTML"}
@@ -49,6 +53,8 @@ print(f"After trying to remove PHP: {my_skills}")
 removed_skill = my_skills.pop()
 print(f"Randomly removed skill: {removed_skill}")
 print(f"Remaining skills: {my_skills}")
+
+
 
 ## Practical Set Examples
 def manage_email_subscriptions():
