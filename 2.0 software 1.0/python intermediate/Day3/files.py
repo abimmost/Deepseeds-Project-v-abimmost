@@ -35,14 +35,14 @@
 
 ## Looping through file a line at a time
 
-def line_by_line():
-    filename = "sample.txt"
-    try:
-        with open(filename, "r") as file:
-            print("Reading file line by line: \n")
-            for i, line in enumerate(file):
-                print(f"Line {i}: {line}")
-    except FileNotFoundError:
-        pass
+# def line_by_line():
+#     filename = "sample.txt"
+#     try:
+#         with open(filename, "r") as file:
+#             print("Reading file line by line: \n")
+#             for i, line in enumerate(file):
+#                 print(f"Line {i}: {line}")
+#     except FileNotFoundError:
+#         pass
 
-line_by_line()
+# line_by_line()
