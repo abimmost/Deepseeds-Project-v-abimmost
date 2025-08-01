@@ -7,7 +7,7 @@ This program is a simple student gradebook system. It allows users to add studen
 The solution uses several Python constructs:
 
 - **Dictionary**: Stores all student records and their grades.
-- **Functions**: Each operation (add student, add grades, calculate averages, display reports) is handled by a separate function for clarity and reuse.
+- **Functions**: Each operation (add student, add grades, calculate averages, display reports) is handled by a separate function for clarity and reuse..
 - **Loops**: `while` loops are used for menu navigation and for entering multiple grades.
 - **Conditional statements**: `if`, `elif`, and `else` are used to check user choices, validate input, and assign letter grades.
 - **String methods**: `.title()` is used to format student names.
