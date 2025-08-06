@@ -59,8 +59,6 @@ student = {
 
 print(f"Original: {student}")
 
-
-
 # Adding new information
 student["gpa"] = 3.8
 student["graduation_year"] = 2025
