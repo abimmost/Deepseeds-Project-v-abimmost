@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime
+import time
 
 st.set_page_config(page_title="DEEPSEED Chat", layout="wide", initial_sidebar_state="expanded")
 
@@ -12,19 +13,22 @@ quick_actions = {
     "Book recommendations": "I recommend 'Atomic Habits' by James Clear and 'Deep Work' by Cal Newport."
 }
 
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
 # Sidebar
 with st.sidebar:
     st.title("🌱 DEEPSEED")
     st.caption("*one seed at a time*")
 
-    st.markdown("---")
+    "---"
 
     st.subheader("📊 Session Stats")
     col1, col2 = st.columns(2)
     with col1:
-        st.metric("Messages", len(st.session_state.get("messages", [])))
+        st.metric("Messages", len(st.session_state.messages))
     with col2:
-        st.metric("Total", len(st.session_state.get("messages", [])))
+        st.metric("Total", len(st.session_state.messages))
 
     st.markdown("---")
 
@@ -32,14 +36,14 @@ with st.sidebar:
     for action in quick_actions.keys():
         if st.button(action, use_container_width=True):
             # Add user message (quick action clicked)
-            st.session_state["messages"].append({
+            st.session_state.messages.append({
                 "role": "user",
                 "text": action,
                 "time": datetime.now().strftime("%H:%M")
             })
-            # Add bot reply for that quick action
-            st.session_state["messages"].append({
-                "role": "bot",
+            # Add assistant reply for that quick action
+            st.session_state.messages.append({
+                "role": "assistant",
                 "text": quick_actions[action],
                 "time": datetime.now().strftime("%H:%M")
             })
@@ -50,34 +54,30 @@ with st.sidebar:
 
 # Main chat area
 st.header("💬 Chat with DEEPSEED")
-
-# Initialize message storage
-if "messages" not in st.session_state:
-    st.session_state["messages"] = []
     
 
-if len(st.session_state["messages"]) == 0:
+if len(st.session_state.messages) == 0:
     col1, col2, col3 = st.columns([1,5,1])
     col2.write("*Type your message below to start or choose a quick action from the sidebar.*")
     
 else:
-# --- Scrollable container for chat messages ---
     message_box = st.container(border=True, height=400, gap="small")
+
     with message_box:
-        # Show all messages
-        for msg in st.session_state["messages"]:
+
+        for msg in st.session_state.messages:
             if msg["role"] == "user":
-                # Right-aligned using empty column on left
                 col_left, col_right = st.columns([0.3, 0.7])
                 with col_right:
-                    st.info(f"{msg['text']} ", icon="🧑‍💻") # ({msg.get('time', '')})
-            elif msg["role"] == "bot":
-                # Left-aligned using empty column on right
+                    with st.chat_message(msg["role"]):
+                        st.write(msg["text"]) # ({msg.get('time', '')})
+
+            elif msg["role"] == "assistant":
                 col_left, col_right = st.columns([0.7, 0.3]) 
                 with col_left:
-                    st.markdown(f">🌱 {msg['text']} ") # ({msg.get('time', '')})
-
-# --- Form for user input ---
+                    with st.chat_message(msg["role"]):
+                        st.write(msg["text"]) # ({msg.get('time', '')})
+                    
 with st.form(key="chat_form", clear_on_submit=True):
     col1, col2 = st.columns([0.85, 0.15])
     with col1:
@@ -85,33 +85,35 @@ with st.form(key="chat_form", clear_on_submit=True):
     with col2:
         send = st.form_submit_button("Send 🚀", use_container_width=True)
 
-# --- Process submission ---
-if send and user_input:
-    time_now = datetime.now().strftime("%H:%M")
-    # Append user message
-    st.session_state["messages"].append({
-        "role": "user",
-        "text": user_input,
-        "time": time_now
-    })
+    if send:
+        if user_input:
+            time_now = datetime.now().strftime("%H:%M")
+            # Append user message
+            st.session_state.messages.append({
+                "role": "user",
+                "text": user_input,
+                "time": time_now
+            })
 
-    # Check for matching quick action (case insensitive substring match)
-    matched_reply = None
-    for action_text, reply_text in quick_actions.items():
-        if action_text.lower() in user_input.lower():
-            matched_reply = reply_text
-            break
+            matched_reply = None
+            for action_text, reply_text in quick_actions.items():
+                if action_text.lower() in user_input.lower():
+                    matched_reply = reply_text
+                    break
 
-    # Use matched reply if found, else default reply
-    bot_reply = matched_reply or " Based on your message, I can provide some insights on this."
-    st.session_state["messages"].append({
-        "role": "bot",
-        "text": bot_reply,
-        "time": time_now
-    })
+            with st.spinner("DEEPSEED is thinking..."):
+                time.sleep(2)  # Simulate processing delay
 
-# Display conversation history stats
-if st.session_state["messages"]:
-    var_total_messages = len(st.session_state["messages"])
+            assistant_reply = matched_reply or " Based on your message, I can provide some insights on this."
+            st.session_state.messages.append({
+                "role": "assistant",
+                "text": assistant_reply,
+                "time": time_now
+            })
+        else:
+            st.warning("Enter some text")
+
+if st.session_state.messages:
+    var_total_messages = len(st.session_state.messages)
     session_id = st.session_state.get("session_id", "N/A")
     st.caption(f"{var_total_messages} messages in the current session  ●  Session: {session_id}")
